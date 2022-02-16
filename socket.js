@@ -1,6 +1,9 @@
 const PORT = process.env.PORT || 8000
+const server = express()
 
-const io = require('socket.io')(PORT,{
+server.listen(PORT, () => console.log(`Listening on ${PORT}`));
+
+const io = require('socket.io')(server,{
 	cors : {
 		origin : '*',
 		methods : ['GET', 'POST']
